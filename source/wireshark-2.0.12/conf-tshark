@@ -1,0 +1,19 @@
+./configure \
+	--host=aarch64 \
+	--target=${TOOLCHAIN} \
+	--build=${BUILD_SYS} \
+	--prefix=${PREFIX} \
+	--with-sysroot=${SYSROOT} \
+	--without-plugins \
+	--disable-wireshark \
+	--disable-editcap \
+	--disable-capinfos \
+	--disable-captype \
+	--disable-mergecap \
+	--disable-reordercap \
+	--disable-dftest \
+	--disable-randpkt \
+	--disable-rawshark \
+	--disable-androiddump \
+	--disable-pcap-ng-default \
+	"$@"

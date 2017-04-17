@@ -1,0 +1,9 @@
+${HOME}/tools/android-ndk-r10e/build/tools/make-standalone-toolchain.sh \
+--toolchain=aarch64-linux-android-4.9 \
+--stl=gnustl \
+--arch=arm64 \
+--ndk-dir=/home/hasanbulat/tools/android-ndk-r10e \
+--system=linux-x86_64 \
+--package-dir=/home/hasanbulat/tools \
+--install-dir=/home/hasanbulat/tools/android64-ndk-toolchain \
+--platform=android-21

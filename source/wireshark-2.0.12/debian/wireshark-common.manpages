@@ -1,0 +1,10 @@
+obj-*/androiddump.1
+obj-*/editcap.1
+obj-*/extcap.4
+obj-*/mergecap.1
+obj-*/text2pcap.1
+obj-*/wireshark-filter.4
+obj-*/capinfos.1
+obj-*/dumpcap.1
+obj-*/rawshark.1
+obj-*/reordercap.1

@@ -1,0 +1,172 @@
+# Makefile.common
+#     Contains the stuff from Makefile.am and Makefile.nmake that is
+#     a) common to both files and
+#     b) portable between both files
+#
+# Wireshark - Network traffic analyzer
+# By Gerald Combs <gerald@wireshark.org>
+# Copyright 1998 Gerald Combs
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+# "BUILT_SOURCES" are built before any "make all" or "make check" targets.
+BUILT_HEADER_FILES =	\
+	version.h
+
+BUILT_C_FILES =
+
+BUILT_SOURCES =	$(BUILT_C_FILES) $(BUILT_HEADER_FILES)
+
+# Header files generated from source files.
+GENERATED_HEADER_FILES = \
+	$(BUILT_HEADER_FILES)
+
+# C source files generated from source files.
+GENERATED_C_FILES =
+
+# All the generated files.
+GENERATED_FILES = $(GENERATED_C_FILES) $(GENERATED_HEADER_FILES)
+
+# sources common for wireshark, tshark, and rawshark
+SHARK_COMMON_SRC =	\
+	cfile.c			\
+	frame_tvbuff.c		\
+	sync_pipe_write.c	\
+	extcap.c		\
+	extcap_parser.c
+
+# corresponding headers
+SHARK_COMMON_INCLUDES =	\
+	cfile.h			\
+	color.h			\
+	extcap.h		\
+	extcap_parser.h		\
+	file.h			\
+	fileset.h		\
+	frame_tvbuff.h		\
+	register.h		\
+	ws_symbol_export.h
+
+# wireshark specifics
+WIRESHARK_COMMON_SRC =	\
+	$(SHARK_COMMON_SRC)	\
+	capture_info.c	\
+	capture_opts.c	\
+	color_filters.c	\
+	file.c		\
+	fileset.c	\
+	summary.c
+
+# corresponding headers
+WIRESHARK_COMMON_INCLUDES =	\
+	capture_info.h	\
+	capture_opts.h	\
+	color_filters.h	\
+	globals.h	\
+	log.h		\
+	summary.h	\
+	sync_pipe.h
+
+# tshark specifics
+tshark_SOURCES =	\
+	$(SHARK_COMMON_SRC)	\
+	capture_opts.c		\
+	tshark.c
+
+# tfshark specifics
+tfshark_SOURCES =	\
+	$(SHARK_COMMON_SRC)	\
+	tfshark.c
+
+# rawshark specifics
+rawshark_SOURCES =	\
+	$(SHARK_COMMON_SRC)	\
+	rawshark.c
+
+# androiddump specifics
+androiddump_SOURCES =	\
+	extcap/androiddump.c
+
+# text2pcap specifics
+text2pcap_SOURCES = \
+	pcapio.c		\
+	text2pcap.c		\
+	text2pcap-scanner.l
+
+text2pcap_INCLUDES = \
+	pcapio.h \
+	text2pcap.h
+
+# mergecap specifics
+mergecap_SOURCES = \
+	mergecap.c
+
+# editcap specifics
+editcap_SOURCES = \
+	editcap.c
+
+# reordercap specifics
+reordercap_SOURCES = \
+	reordercap.c
+
+# capinfos specifics
+capinfos_SOURCES = \
+	capinfos.c
+
+# captype specifics
+captype_SOURCES = \
+	captype.c
+
+# dftest specifics
+dftest_SOURCES =	\
+	dftest.c
+
+# echld specifics
+echld_test_SOURCES =	\
+	echld_test.c	\
+	capture_opts.c	\
+	capture_stop_conditions.c	\
+	cfile.c		\
+	conditions.c	\
+	pcapio.c	\
+	ringbuffer.c	\
+	sync_pipe_write.c
+
+# randpkt specifics
+randpkt_SOURCES = \
+	randpkt.c
+
+# dumpcap specifics
+dumpcap_SOURCES =	\
+	capture_opts.c	\
+	capture_stop_conditions.c	\
+	conditions.c	\
+	dumpcap.c	\
+	pcapio.c	\
+	ringbuffer.c	\
+	sync_pipe_write.c
+
+# corresponding headers
+dumpcap_INCLUDES = \
+	capture_stop_conditions.h	\
+	conditions.h	\
+	pcapio.h	\
+	ringbuffer.h
+
+# this target needed for distribution only
+noinst_HEADERS =	\
+	$(SHARK_COMMON_INCLUDES) \
+	$(WIRESHARK_COMMON_INCLUDES) \
+	$(dumpcap_INCLUDES)
