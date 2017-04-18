@@ -1,4 +1,5 @@
 ## How to compile tshark binary for arm64 architecture android devices
+   TShark is a network protocol analyzer. It lets you capture packet data from a live network, or read packets from a previously saved capture file, either printing a decoded form of those packets to the standard output or writing the packets to a file. TShark's native capture file format is pcap format.
 
 ### Clone this repository from github into your home directory
 	$ cd ~
