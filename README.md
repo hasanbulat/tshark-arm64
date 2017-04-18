@@ -60,6 +60,7 @@ aarch64-linux-android-4.9 standalone toolchain will be install in tools/android6
 	
 ### Compile tshark
 #### Run the following commands
+	$ source ~/tshark/set-env-tshark.sh
 	$ cd ../wireshark-2.0.12
 	$ ./autogen.sh
 	$ ./conf-tshark
