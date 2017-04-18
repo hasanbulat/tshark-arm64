@@ -1,8 +1,8 @@
 # How to compile tshark binary for arm64 architechture android
 
-- Clone this repository from TODO:add link into your home directory
+- Clone this repository from github into your home directory
 	$ cd ~
-	$ git clone TODO: add link
+	$ git clone https://github.com/hasanbulat/tshark.git
 
 - Prepare necessary package and tools
 	- Run the following command to install compiling tools
