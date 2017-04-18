@@ -66,7 +66,7 @@ aarch64-linux-android-4.9 standalone toolchain will be install in tools/android6
 All binaries and libraries will be install in "~/android64" directory
 
 ### Testing
-copy "tshark" and "dumpcap" in wireshark-2.0.12 directory to "/data" on your android devices then using adb to access android shell (you have to access root privilege)
+Copy "tshark" and "dumpcap" binaries in wireshark-2.0.12 directory to "/data" directory on your android devices then using adb to access android shell (root access required on android devices)
 - `$ cd /data`
 - `$ ./tshark --version`
 
