@@ -10,15 +10,17 @@
 	$ sudo apt install build-essential
 	$ sudo apt install pkg-config automake autoconf libtool libtool-bin
 	$ sudo apt install zlib1g-dev byacc flex libffi-dev
-
-#### Download NDK tools https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip
-	$ wget https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip
-
+	
 #### Create "tools" directory in your home directory
 	$ mkdir tools
 
+#### Download and unzip NDK tools https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip using command
+	$ cd tools
+	$ wget https://dl.google.com/android/repository/android-ndk-r10e-linux-x86_64.zip
+	$ unzip android-ndk-r10e-linux-x86_64.zip
+
 #### Run "make-standalone-toolchain" script
-	$ cd tshark
+	$ cd ~/tshark
 	$ ./make-standalone-toolchain
 aarch64-linux-android-4.9 standalone toolchain will be install in tools/android64-ndk-toolchain directory
 
