@@ -1,4 +1,4 @@
-## How to compile tshark binary for arm64 architechture android
+## How to compile tshark binary for arm64 architecture android
 
 ### Clone this repository from github into your home directory
 	$ cd ~
@@ -64,3 +64,26 @@ aarch64-linux-android-4.9 standalone toolchain will be install in tools/android6
 	$ make
 	$ make install
 All binaries and libraries will be install in "~/android64" directory
+
+### Testing
+copy "tshark" and "dumpcap" in wireshark-2.0.12 directory to "/data" on your android devices then using adb to access android shell (you have to access root privilege)
+	$ cd /data
+	$ ./tshark --version
+
+if tshark working correctly, you will see output like this:
+Running as user "root" and group "root". This could be dangerous.
+TShark (Wireshark) 2.0.12 (Git Rev Unknown from unknown)
+
+Copyright 1998-2017 Gerald Combs <gerald@wireshark.org> and contributors.
+License GPLv2+: GNU GPL version 2 or later <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Compiled (64-bit) with libpcap, without POSIX capabilities, without libnl, with
+libz 1.2.3, with GLib 2.48.1, without SMI, without c-ares, without ADNS, without
+Lua, without GnuTLS, without Gcrypt, without Kerberos, without GeoIP.
+
+Running on Linux 3.18.20-v01+, with locale C, with libpcap version 1.8.1, with
+libz 1.2.8.
+
+Built using gcc 4.9 20140827 (prerelease).
