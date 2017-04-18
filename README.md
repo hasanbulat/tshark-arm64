@@ -1,4 +1,4 @@
-## How to compile tshark binary for arm64 architecture android
+## How to compile tshark binary for arm64 architecture android devices
 
 ### Clone this repository from github into your home directory
 	$ cd ~
