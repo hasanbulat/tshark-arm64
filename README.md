@@ -92,3 +92,7 @@ Running on Linux 3.18.20-v01+, with locale C, with libpcap version 1.8.1, with
 libz 1.2.8.
 
 Built using gcc 4.9 20140827 (prerelease).
+
+## References
+- http://zwyuan.github.io/2016/07/18/cross-compile-wireshark-for-android/
+- https://www.wireshark.org/docs/man-pages/tshark.html
